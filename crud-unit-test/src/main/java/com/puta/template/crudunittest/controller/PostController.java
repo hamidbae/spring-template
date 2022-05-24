@@ -1,4 +1,4 @@
-package com.puta.template.crudunittest.domain.controller;
+package com.puta.template.crudunittest.controller;
 
 import com.puta.template.crudunittest.domain.dto.PostDto;
 import com.puta.template.crudunittest.service.PostService;
@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Slf4j
 @RestController
@@ -26,7 +28,7 @@ public class PostController {
     }
 
     @PostMapping("/posts")
-    public ResponseEntity<Object> add(@RequestBody PostDto postDto) {
+    public ResponseEntity<Object> add(@Valid @RequestBody PostDto postDto) {
         return postService.addPost(postDto);
     }
 

@@ -3,7 +3,7 @@ package com.puta.template.crudunittest.domain.common;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.Set;
+import java.util.List;
 
 @Builder
 @Getter
@@ -15,5 +15,5 @@ public class ApiResponse <T> {
     private String code;
     private String message;
     private T data;
-    private Set<String> errors;
+    private List<String> errors;
 }
